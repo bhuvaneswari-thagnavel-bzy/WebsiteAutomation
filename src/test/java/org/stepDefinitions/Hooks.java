@@ -21,6 +21,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks extends Base {
 	
@@ -38,7 +39,13 @@ public class Hooks extends Base {
 		String browser = prop.getProperty("browser");
 		if(browser.equals("chrome"))
 		{
-			driver = new ChromeDriver();
+			// driver = new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--headless");
+			driver = new ChromeDriver(options);
 		}
 		else 
 		{
