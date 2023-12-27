@@ -1,0 +1,255 @@
+{
+    "score": "686/1000",
+    "scoreBand": "Needs Work",
+    "scoreBandNumeric": 3,
+    "updated": "05-25-2023",
+    "peerScore": "632/1000",
+    "peerScoreBand": "Needs Work",
+    "peerScoreBandNumeric": 3,
+    "peerComparison": "More secure than 91% of peers",
+    "factors": {
+        "total": 49,
+        "critical": 3,
+        "substantial": 17,
+        "moderate": 29
+    },
+    "categories": [
+        {
+            "id": "email",
+            "name": "Email",
+            "factors": {
+                "total": 1,
+                "critical": 0,
+                "substantial": 0,
+                "moderate": 1
+            },
+            "score": "957/1000",
+            "scoreBand": "Great",
+            "scoreBandNumeric": 5
+        },
+        {
+            "id": "account",
+            "name": "Account",
+            "score": "587/1000",
+            "scoreBand": "Needs Work",
+            "scoreBandNumeric": 3,
+            "factors": {
+                "total": 6,
+                "critical": 0,
+                "substantial": 3,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "network",
+            "name": "Network",
+            "score": "182/1000",
+            "scoreBand": "Very poor",
+            "scoreBandNumeric": 1,
+            "factors": {
+                "total": 25,
+                "critical": 2,
+                "substantial": 8,
+                "moderate": 15
+            }
+        },
+        {
+            "id": "endpoint",
+            "name": "Endpoint",
+            "score": "895/1000",
+            "scoreBand": "Good",
+            "scoreBandNumeric": 4,
+            "factors": {
+                "total": 3,
+                "critical": 0,
+                "substantial": 1,
+                "moderate": 2
+            }
+        },
+        {
+            "id": "data",
+            "name": "Data",
+            "score": "821/1000",
+            "scoreBand": "Good",
+            "scoreBandNumeric": 4,
+            "factors": {
+                "total": 4,
+                "critical": 0,
+                "substantial": 1,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "operations",
+            "name": "Operations",
+            "score": "421/1000",
+            "scoreBand": "Poor",
+            "scoreBandNumeric": 2,
+            "factors": {
+                "total": 9,
+                "critical": 0,
+                "substantial": 4,
+                "moderate": 5
+            }
+        },
+        {
+            "id": "vulnerabilities",
+            "name": "Potential Vulnerabilities",
+            "score": "902/1000",
+            "scoreBand": "Great",
+            "scoreBandNumeric": 5,
+            "factors": {
+                "total": 1,
+                "critical": 0,
+                "substantial": 0,
+                "moderate": 1
+            }
+        }
+    ],
+    "scenarios": [
+        {
+            "id": "bec",
+            "name": "Business Email Compromise",
+            "scoreBand": "Substantial",
+            "scoreBandNumeric": 2,
+            "factors": {
+                "total": 6,
+                "critical": 1,
+                "substantial": 2,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "cloud_compromise",
+            "name": "Cloud Environment Compromise",
+            "scoreBand": "Moderate",
+            "scoreBandNumeric": 3,
+            "factors": {
+                "total": 5,
+                "critical": 0,
+                "substantial": 2,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "data_disclosure",
+            "name": "Accidental Data Disclosure",
+            "scoreBand": "Low",
+            "scoreBandNumeric": 4,
+            "factors": {
+                "total": 0,
+                "critical": 0,
+                "substantial": 0,
+                "moderate": 0
+            }
+        },
+        {
+            "id": "ddos",
+            "name": "Distributed Denial of Service",
+            "scoreBand": "Low",
+            "scoreBandNumeric": 4,
+            "factors": {
+                "total": 0,
+                "critical": 0,
+                "substantial": 0,
+                "moderate": 0
+            }
+        },
+        {
+            "id": "emdb",
+            "name": "External Major Data Breach",
+            "scoreBand": "High",
+            "scoreBandNumeric": 1,
+            "factors": {
+                "total": 7,
+                "critical": 2,
+                "substantial": 2,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "insider_compromise",
+            "name": "Insider Software Compromise",
+            "scoreBand": "Low",
+            "scoreBandNumeric": 4,
+            "factors": {
+                "total": 0,
+                "critical": 0,
+                "substantial": 0,
+                "moderate": 0
+            }
+        },
+        {
+            "id": "major_insider_breach",
+            "name": "Insider Major Data Breach",
+            "scoreBand": "Moderate",
+            "scoreBandNumeric": 3,
+            "factors": {
+                "total": 5,
+                "critical": 0,
+                "substantial": 2,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "insider_breach",
+            "name": "Insider Data Breach",
+            "scoreBand": "Moderate",
+            "scoreBandNumeric": 3,
+            "factors": {
+                "total": 5,
+                "critical": 0,
+                "substantial": 2,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "services_compromise",
+            "name": "Accidental Digital Services Compromise",
+            "scoreBand": "Low",
+            "scoreBandNumeric": 4,
+            "factors": {
+                "total": 0,
+                "critical": 0,
+                "substantial": 0,
+                "moderate": 0
+            }
+        },
+        {
+            "id": "thirdparty_compromise",
+            "name": "Third Party Compromise",
+            "scoreBand": "Moderate",
+            "scoreBandNumeric": 3,
+            "factors": {
+                "total": 5,
+                "critical": 0,
+                "substantial": 2,
+                "moderate": 3
+            }
+        },
+        {
+            "id": "web_compromise",
+            "name": "Web Framework Compromise",
+            "scoreBand": "Low",
+            "scoreBandNumeric": 4,
+            "factors": {
+                "total": 0,
+                "critical": 0,
+                "substantial": 0,
+                "moderate": 0
+            }
+        },
+        {
+            "id": "widespread_ransomware",
+            "name": "Widespread Ransomware",
+            "scoreBand": "High",
+            "scoreBandNumeric": 1,
+            "factors": {
+                "total": 5,
+                "critical": 0,
+                "substantial": 2,
+                "moderate": 3
+            }
+        }
+    ]
+}
