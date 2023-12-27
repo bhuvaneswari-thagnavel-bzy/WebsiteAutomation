@@ -40,12 +40,12 @@ public class Hooks extends Base {
 		if(browser.equals("chrome"))
 		{
 			// driver = new ChromeDriver();
-			// WebDriverManager.chromedriver().setup();
-			// ChromeOptions options = new ChromeOptions();
-			// options.addArguments("--no-sandbox");
-			// options.addArguments("--disable-dev-shm-usage");
-			// options.addArguments("--headless");
-			driver = new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--headless");
+			driver = new ChromeDriver(options);
 		}
 		else 
 		{
