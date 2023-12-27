@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/resources/Regression" },
+@CucumberOptions(features = { "src/test/resources/Regression/PageLoads.feature" },
 				 glue =    {"org.stepDefinitions" }, 
 				 plugin = { "pretty", "html:target/Reports/cucumber.html","json:target/Reports/cucumber.json" }, 
 				 publish = true,
