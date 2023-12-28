@@ -50,7 +50,7 @@ public class Hooks extends Base {
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--headless");
-			driver = new ChromeDriver(options);
+			base.driver = new ChromeDriver(options);
 
 		// WebDriverManager.chromedriver().setup();
 	    //     ChromeOptions chromeOptions = new ChromeOptions();
