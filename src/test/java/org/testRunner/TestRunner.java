@@ -8,7 +8,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
 
-		features = "src/test/resources/Regression/PageLoads.feature",
+		features = "src/test/resources/Regression/DECD-71.feature",
 
 		glue = { "org.stepDefinitions" },
 
