@@ -11,12 +11,15 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 
 
-public class Base implements IAutoConstant{
+public class Base {
 
+	
 	static
 	{
+//		System.setProperty(CHROME_KEY,CHROME_VALUE);
+//		implements IAutoConstant
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/driver/chromedriver.exe");
-		System.setProperty(GECKO_KEY,GECKO_VALUE);
+//		System.setProperty(GECKO_KEY,GECKO_VALUE);
 	}
 	
 	public static WebDriver driver;
@@ -28,4 +31,11 @@ public class Base implements IAutoConstant{
 	public static Properties prop;
 	
 	public static FileInputStream fis;
+	
+	public static long ITO = 20;
+	public static  long ETO = 20;
+	public static  long MTO = 108000;
+	
+	public static String excelPath = "./data/data.xlsx";
+	public static String photoPath = "./ScreenShots/";
 }

@@ -24,6 +24,11 @@ import io.cucumber.java.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks extends Base {
+
+	private static Base base;	
+	public Hooks(Base base) {
+        this.base = base;
+    }
 	
 	@BeforeAll
 	public static void extentReportsInitialization() {
@@ -47,7 +52,7 @@ public class Hooks extends Base {
 			// options.addArguments("--headless");
 			// driver = new ChromeDriver(options);
 
-		// WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
         // ChromeOptions chromeOptions = new ChromeOptions();
         // chromeOptions.addArguments("--headless");
         // base.Driver = new ChromeDriver(chromeOptions);

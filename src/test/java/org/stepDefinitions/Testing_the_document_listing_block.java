@@ -11,6 +11,11 @@ import io.cucumber.java.en.*;
 
 public class Testing_the_document_listing_block extends Base{
 	public static int count = 0;
+
+	private static Base base;	
+	public Testing_the_document_listing_block(Base base) {
+        this.base = base;
+    }
 	
 	@Given("User should navigate to {string} {string} {string}")
 	public void user_should_navigate_to(String name, String pageurl, String report) throws InterruptedException {
