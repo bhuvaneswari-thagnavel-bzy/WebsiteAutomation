@@ -47,10 +47,10 @@ public class Hooks extends Base {
 			// options.addArguments("--headless");
 			// driver = new ChromeDriver(options);
 
-		WebDriverManager.chromedriver().setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-        base.Driver = new ChromeDriver(chromeOptions);
+		// WebDriverManager.chromedriver().setup();
+        // ChromeOptions chromeOptions = new ChromeOptions();
+        // chromeOptions.addArguments("--headless");
+        // base.Driver = new ChromeDriver(chromeOptions);
 		driver = new ChromeDriver();
 
 
