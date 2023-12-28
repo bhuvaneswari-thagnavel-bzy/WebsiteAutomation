@@ -15,7 +15,7 @@ public class Base implements IAutoConstant{
 
 	static
 	{
-		System.setProperty(CHROME_KEY,CHROME_VALUE);
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/driver/chromedriver.exe");
 		System.setProperty(GECKO_KEY,GECKO_VALUE);
 	}
 	
