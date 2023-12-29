@@ -30,8 +30,8 @@ jobs:
       - name: Build with Maven
         run: mvn clean generate-sources test --file pom.xml || true
 
-      - name: Deploy report to GitHub Page
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/upload-artifact@v3  # upload test results
+        if: success() || failure()        # run this step even if previous step failed
         with:
-         personal_token: ${{ secrets.BeazleyToken}}
-         publish_dir: ./reporter
+          name: test-results
+          path: reporter/jest-junit.xml
