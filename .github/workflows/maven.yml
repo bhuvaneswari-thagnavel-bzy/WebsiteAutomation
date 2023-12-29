@@ -26,10 +26,15 @@ jobs:
           java-version: '11'
           distribution: temurin
           cache: maven
-
+          
       - name: Build with Maven
-        run: mvn test --batch-mode -Dmaven.test.failure.ignore=true
-      - name: Publish Test Report
-        uses: starburstdata/action-testng-report@v1
+        run: mvn clean test
+        
+      - name: Upload Extent HTML report
+        uses: actions/upload-artifact@v3
+        if: always()
         with:
-          github_token: ${{ secrets.BeazleyToken }}
+          name: go-rest-report
+          path: reporter/Report_*.html
+
+        
