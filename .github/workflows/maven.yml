@@ -28,10 +28,4 @@ jobs:
           cache: maven
           
       - name: Build with Maven
-        run: mvn clean generate-sources test --file pom.xml || true
-
-      - name: Deploy report page to GitHub Page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-         branch: gh-pages
-         publish_dir: ./reporter
+        run: mvn clean verify -Dtestng.dtd.http=true
