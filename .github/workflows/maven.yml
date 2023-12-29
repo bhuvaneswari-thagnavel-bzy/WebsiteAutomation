@@ -30,7 +30,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean generate-sources test --file pom.xml || true
 
-      - name: Deploy report page to GitHub Page
+      - name: Deploy report to GitHub Page
         uses: peaceiris/actions-gh-pages@v3
         with:
          personal_token: ${{ secrets.BeazleyToken}}
