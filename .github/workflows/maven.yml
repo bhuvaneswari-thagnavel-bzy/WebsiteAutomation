@@ -29,8 +29,9 @@ jobs:
           
       - name: Build with Maven
         run: mvn clean generate-sources test --file pom.xml || true
+
       - name: Deploy report page to GitHub Page
         uses: peaceiris/actions-gh-pages@v3
         with:
-         github_token: ${{secrets.GITHUB_TOKEN}}
+         branch: gh-pages
          publish_dir: ./reporter
