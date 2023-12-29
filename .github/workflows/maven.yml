@@ -26,19 +26,10 @@ jobs:
           java-version: '11'
           distribution: temurin
           cache: maven
-          
-      - name: Build with Maven
-        run: mvn clean generate-sources test --file pom.xml || true
 
-      - name: Get date
-        id: date
-        run: 'echo "::set-output name=date::$(TZ=IST-5:30 date +''%Y-%m-%d'')"'
-        
-      - name: Get date time
-        id: date_time
-       # if: success() || failure()
-        run: 'echo "::set-output name=date_time::$(TZ=IST-5:30 date +''%Y-%m-%d-%T'')"'
-        
-      - name: Rename file
-        run: |
-          cp ./reporter/Report.html  "./reporter/Report_${{steps.date_time.outputs.date_time}}.html"
+      - name: Build with Maven
+        run: mvn test --batch-mode -Dmaven.test.failure.ignore=true
+      - name: Publish Test Report
+        uses: starburstdata/action-testng-report@v1
+        with:
+          github_token: ${{ secrets.BeazleyToken }}
