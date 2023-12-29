@@ -30,8 +30,15 @@ jobs:
       - name: Build with Maven
         run: mvn clean generate-sources test --file pom.xml || true
 
-      - uses: actions/upload-artifact@v3  # upload test results
-        if: success() || failure()        # run this step even if previous step failed
-        with:
-          name: test-results
-          path: reporter/jest-junit.xml
+      - name: Get date
+        id: date
+        run: 'echo "::set-output name=date::$(TZ=IST-5:30 date +''%Y-%m-%d'')"'
+        
+      - name: Get date time
+        id: date_time
+       # if: success() || failure()
+        run: 'echo "::set-output name=date_time::$(TZ=IST-5:30 date +''%Y-%m-%d-%T'')"'
+        
+      - name: Rename file
+        run: |
+          cp ./reporter/Report.html  "./reporter/Report_${{steps.date_time.outputs.date_time}}.html"
