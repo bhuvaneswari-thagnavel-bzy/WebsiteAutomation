@@ -13,7 +13,6 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class Base {
 
-	
 	static
 	{
 //		System.setProperty(CHROME_KEY,CHROME_VALUE);

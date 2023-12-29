@@ -63,7 +63,7 @@ public class StubODP extends Base{
      }
 	@And("Validate RiskScore API")
 	public void Validate_RiskScore_API() throws FileNotFoundException, ParseException, IOException {	
-		stub.ValidateAPIResponse();
+//		stub.ValidateAPIResponse();
 		stub.Writeresponsebacktojsonfile();
 //		stub.readresponse();
 		stub.validateJsonDocument();

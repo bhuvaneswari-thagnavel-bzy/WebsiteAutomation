@@ -11,7 +11,7 @@ import io.cucumber.java.en.*;
 
 public class Testing_the_document_listing_block extends Base{
 	public static int count = 0;
-
+	
 	private static Base base;	
 	public Testing_the_document_listing_block(Base base) {
         this.base = base;
@@ -49,7 +49,7 @@ public class Testing_the_document_listing_block extends Base{
 	@When("clicking the Geopgraphy dropdown")
 	public void clicking_the_geopgraphy_dropdown() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[text()='Geography']")).click();
+		base.driver.findElement(By.xpath("//span[text()='Geography']")).click();
 		Thread.sleep(2000);	    
 	}
 

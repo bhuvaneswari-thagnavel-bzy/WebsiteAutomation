@@ -3,6 +3,7 @@ package org.stepDefinitions;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -10,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import org.generics.Base;
 import org.generics.FWUtils;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -24,16 +26,18 @@ import io.cucumber.java.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks extends Base {
-
+	
 	private static Base base;	
 	public Hooks(Base base) {
         this.base = base;
     }
 	
+	
 	@BeforeAll
 	public static void extentReportsInitialization() {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		extentReports = new ExtentReports(System.getProperty("user.dir")+"/reporter/Report "+dateName+".html",false);
+		
 	}
 
 	@Before(order = 0)
@@ -44,24 +48,28 @@ public class Hooks extends Base {
 		String browser = prop.getProperty("browser");
 		if(browser.equals("chrome"))
 		{
+//			driver = new ChromeDriver();
+////			WebDriverManager.chromedriver().setup();
+////			ChromeOptions options = new ChromeOptions();
+////			options.addArguments("--no-sandbox");
+////			options.addArguments("--disable-dev-shm-usage");
+////			options.addArguments("--headless");
+//			driver = new ChromeDriver();
+			
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--headless");
-			driver = new ChromeDriver(options);
-
-		// WebDriverManager.chromedriver().setup();
-	    //     ChromeOptions chromeOptions = new ChromeOptions();
-	    //     chromeOptions.addArguments("--headless");
-			
-	    //  driver = new ChromeDriver();
-
-
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--headless");
+	        base.driver = new ChromeDriver();
+	        
+	        
 		}
 		else 
 		{
-			driver = new FirefoxDriver();
+			driver = new FirefoxDriver();	
+			
+			
 		}
 		driver.manage().timeouts().implicitlyWait(ITO,TimeUnit.SECONDS);
 		driver.manage().window().maximize();

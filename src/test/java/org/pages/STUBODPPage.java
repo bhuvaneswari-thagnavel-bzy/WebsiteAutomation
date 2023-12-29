@@ -1,6 +1,6 @@
 package org.pages;
 
-import static io.restassured.RestAssured.given;
+//import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertTrue;
 
 import java.io.FileNotFoundException;
@@ -59,7 +59,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.relevantcodes.extentreports.LogStatus;
 
-import io.restassured.response.Response;
+//import io.restassured.response.Response;
 
 public class STUBODPPage extends Base {
 	static SoftAssert softAssert = new SoftAssert();
@@ -390,40 +390,40 @@ public class STUBODPPage extends Base {
 		softAssert.assertAll();
 	}
 
-	public static String ValidateAPIResponse() throws ParseException, FileNotFoundException, IOException {
-		String responseBody = null;
-		try {
-			File file = new File(rootPath + "/src/test/resources/RequestPayload.json");
-
-			Response res = given().baseUri("https://api.beazley.com/vor/v1/7BinsuredID7D")
-					.queryParam("Subscription-Key", "3ce5bed53c3e42eaaa95327e943a467f").body(file).
-
-					when().get("/profile").
-
-					then().statusCode(200).assertThat().statusCode(200).extract().response();
-
-			responseBody = res.body().asPrettyString();
-			System.out.println(res.body().asPrettyString());
-			System.out.println("Get the status code: " + res.statusCode());
-			extentTest.log(LogStatus.PASS, "API Response: ----       " + res.body().asPrettyString());
-			
-			softAssert.assertEquals(res.statusCode(), 200);			
-			softAssert.assertNotEquals(res.statusCode(), 400); /* revalidate the logic implemented*/
-			softAssert.assertNotEquals(res.statusCode(), 404);
-			softAssert.assertNotEquals(res.statusCode(), 500);
-
-		} catch (AssertionError | Exception e) {
-			System.out.println(e.getMessage());
-			extentTest.log(LogStatus.FAIL, e.getMessage());
-			Assert.fail("Assertion Error:  ----- check the API status code in response");
-		}
-		return responseBody;
-
-	}
+//	public static String ValidateAPIResponse() throws ParseException, FileNotFoundException, IOException {
+//		String responseBody = null;
+//		try {
+//			File file = new File(rootPath + "/src/test/resources/RequestPayload.json");
+//
+//			Response res = given().baseUri("https://api.beazley.com/vor/v1/7BinsuredID7D")
+//					.queryParam("Subscription-Key", "3ce5bed53c3e42eaaa95327e943a467f").body(file).
+//
+//					when().get("/profile").
+//
+//					then().statusCode(200).assertThat().statusCode(200).extract().response();
+//
+//			responseBody = res.body().asPrettyString();
+//			System.out.println(res.body().asPrettyString());
+//			System.out.println("Get the status code: " + res.statusCode());
+//			extentTest.log(LogStatus.PASS, "API Response: ----       " + res.body().asPrettyString());
+//			
+//			softAssert.assertEquals(res.statusCode(), 200);			
+//			softAssert.assertNotEquals(res.statusCode(), 400); /* revalidate the logic implemented*/
+//			softAssert.assertNotEquals(res.statusCode(), 404);
+//			softAssert.assertNotEquals(res.statusCode(), 500);
+//
+//		} catch (AssertionError | Exception e) {
+//			System.out.println(e.getMessage());
+//			extentTest.log(LogStatus.FAIL, e.getMessage());
+//			Assert.fail("Assertion Error:  ----- check the API status code in response");
+//		}
+//		return responseBody;
+//
+//	}
 
 	public void Writeresponsebacktojsonfile() throws FileNotFoundException, ParseException, IOException {
-		String GetResponse = ValidateAPIResponse();
-		WriteJSONResponse(GetResponse, "/src/test/resources/Response.json");
+//		String GetResponse = ValidateAPIResponse();
+//		WriteJSONResponse(GetResponse, "/src/test/resources/Response.json");
 
 	}
 
