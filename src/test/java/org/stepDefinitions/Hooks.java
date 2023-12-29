@@ -44,19 +44,18 @@ public class Hooks extends Base {
 		String browser = prop.getProperty("browser");
 		if(browser.equals("chrome"))
 		{
-			// driver = new ChromeDriver();
-			// WebDriverManager.chromedriver().setup();
-			// ChromeOptions options = new ChromeOptions();
-			// options.addArguments("--no-sandbox");
-			// options.addArguments("--disable-dev-shm-usage");
-			// options.addArguments("--headless");
-			// base.driver = new ChromeDriver(options);
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--headless");
+			driver = new ChromeDriver(options);
 
-		WebDriverManager.chromedriver().setup();
+		// WebDriverManager.chromedriver().setup();
 	    //     ChromeOptions chromeOptions = new ChromeOptions();
 	    //     chromeOptions.addArguments("--headless");
 			
-	     driver = new ChromeDriver();
+	    //  driver = new ChromeDriver();
 
 
 		}
